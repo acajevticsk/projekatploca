@@ -1,0 +1,626 @@
+   * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            height: 100%;
+            margin: 0;
+        }
+
+      body {
+    font-family: "Inter", sans-serif;
+    background-image: url("wallpaper.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;  /* centriranje */
+    background-size: cover;              /* popuni ceo ekran */
+    background-attachment: fixed;        /* ostaje fiksirana */
+    
+    color: #1e1b18;
+    line-height: 1.6;
+}
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 3rem 2.5rem 4rem;
+        }
+
+        /* Tipografija – ozbiljna, pregledna */
+        h1, h2, h3, .year-heading h2, .review-author, .award-title {
+            font-family: "Cormorant Garamond", serif;
+            font-weight: 600;
+            letter-spacing: 0.01em;
+        }
+
+        .year-nav {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0 3rem 0;
+}
+
+.nav-container {
+    display: flex;
+    gap: 1.5rem;
+    background: #f5f1ec;
+    padding: 0.8rem 2rem;
+    border: 1px solid #be976a;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.nav-link {
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 1.3rem;
+    color: #4a3f35;
+    text-decoration: none;
+    padding: 0.3rem 1.5rem;
+    border: 2px solid transparent;
+    transition: all 0.2s ease;
+    letter-spacing: 0.5px;
+}
+
+.nav-link:hover {
+    border-color: #7f6246;
+    background: #fff3d3;
+    color: #2f3e46;
+}
+
+.site-logo{
+    width: 700px;
+    margin-top: 0.8rem;
+    opacity: 0.95;
+}
+
+.site-logo:hover{
+    opacity: 1;
+}
+
+#scrollTopBtn{
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 52px;
+  height: 52px;
+  display: none;
+  border: 2px solid #7f6246;
+  background: #fff3d3;
+  color: #4e3f30;
+  border-radius: 50%;
+  font-size: 22px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 8px 18px -8px rgba(0,0,0,0.35);
+  transition: all 0.25s ease;
+  z-index: 1000;
+}
+
+
+
+#scrollTopBtn:hover{
+  background: #7f6246;
+  color: #ffffff;
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px -10px rgba(0,0,0,0.45);
+}
+
+
+#scrollTopBtn:active{
+  transform: translateY(-1px);
+}
+        /* ===== HEADER (minimal, ali jak) ===== */
+       .site-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 2rem; /* smanjeno sa 4rem */
+    border-bottom: 1px solid #dad3cb;
+    padding-bottom: 1.5rem; /* smanjeno sa 2.8rem */
+}
+
+    .site-header h1 {
+    font-size: 5rem;
+    font-weight: 1000; /* povećano sa 700 na 800 (još boldiranije) */
+    color: #1f2b35;
+    margin-bottom: -0.8rem;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    z-index: 2;
+}
+
+.site-logo {
+    width: 700px;
+    margin-top: -0.5rem; /* NEGATIVAN margin - povlači sliku gore ka tekstu */
+    opacity: 0.95;
+    position: relative;
+    z-index: 1;
+}
+
+        .site-header .subtitle {
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: #4f5348;
+            background: #e7e3dd;
+            padding: 0.4rem 2rem;
+            border-radius: 40px;
+            border: 1px solid #bdb2a5;
+        }
+
+        /* ===== UVODNA KARTA – projekat PLOČA ===== */
+        .intro-card {
+            background: #fff3d3;
+            border: 1px solid #d0c5b8;
+            box-shadow: 0 10px 28px -18px #3a3a3a;
+            padding: 2.5rem 3rem;
+            margin-bottom: 4.5rem;
+            border-radius: 0;  /* oštar pravougaonik – ozbiljan utisak */
+            border-left: 10px solid #8b6c4d; /* tamno braon akcent */
+            border-radius: 2%;
+        }
+
+        .intro-card h2 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: #3a4a53;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .intro-card p {
+            font-size: 1.18rem;
+            color: #2e2b27;
+            max-width: 1000px;
+        }
+
+        .intro-stat {
+            display: inline-block;
+            background: #3a4a53;
+            color: #f1eee9;
+            padding: 0.4rem 1.8rem;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            margin-top: 1.2rem;
+            border: none;
+            font-size: 1rem;
+        }
+
+        /* ===== GODINE (blokovi) – sada bez zaobljenja, čiste linije ===== */
+        .years-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 4.5rem;
+        }
+
+        .year-block {
+            background-color: rgba(255, 243, 211, 0.8); 
+            border: 1px solid #d6cdc2;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.02);
+        }
+
+        .year-heading {
+            background: #be976a;   /* svetlo sivo-bež */
+            padding: 1.2rem 2.5rem;
+            border-bottom: 2px solid #a48f7a;
+        }
+
+        .year-heading h2 {
+            font-size: 2.6rem;
+            font-weight: 600;
+            color: #252d32;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+        }
+
+        .year-heading h2 span {
+            font-family: "Inter", sans-serif;
+            font-size: 2rem;
+            font-weight: 500;
+            color: white;
+            padding: 0.3rem 1.4rem;
+            letter-spacing: 0.4px;
+        }
+
+        .projects-list {
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2.8rem;
+        }
+
+        /* projekat stavka */
+        .project-item {
+            border-bottom: 1px solid #cdc0b2;
+            padding-bottom: 2rem;
+        }
+        .project-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .project-item h3 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #2f3e46;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .project-icon {
+            font-size: 2rem;
+            background: transparent;
+            color: #5f6a72;
+        }
+
+        .meta-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem 1rem;
+            margin: 0.5rem 0 1rem;
+        }
+
+        .meta-tag {
+            background: #e2dad1;
+            color: #2b362b;
+            padding: 0.2rem 1.2rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+            border: none;
+            border-radius: 0;
+        }
+
+        .project-desc {
+            font-size: 1.1rem;
+            color: #2d2a26;
+            margin-bottom: 1.5rem;
+        }
+
+        /* RECENZIJE – sada tamniji box, ozbiljan izgled */
+        .review-box {
+            background: #f5f1ec;
+            border-left: 6px solid #7f6246;
+            padding: 1.8rem 2.2rem;
+            margin: 1.8rem 0 1.2rem;
+            box-shadow: inset 0 0 0 1px #e2d5c8;
+            font-size: 1rem;
+        }
+
+        .review-author {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #4e3f30;
+            margin-bottom: 1rem;
+            border-bottom: 2px dotted #bba88f;
+            padding-bottom: 0.3rem;
+        }
+
+        .review-text {
+            font-style: italic;
+            color: #2b2824;
+        }
+
+        /* mini događaji – sada neutralne kartice */
+        .mini-event {
+            background: #f2ede7;
+            padding: 1.2rem 1.8rem;
+            margin: 1.2rem 0 0.5rem;
+            border-left: 5px solid #808b8b;
+            font-size: 1.05rem;
+        }
+
+        .media-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin: 1.2rem 0;
+        }
+
+        .media-item {
+            background: #4e5b61;
+            color: white;
+            padding: 0.2rem 1rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.4px;
+            border: none;
+        }
+
+        .inspire-quote {
+            background: #e3dfd7;
+            padding: 2rem 2.5rem;
+            margin: 2rem 0 1rem;
+            border-left: 10px solid #886b4c;
+            font-size: 1.15rem;
+            color: #21201c;
+        }
+
+        .inspire-quote strong {
+            color: #433f39;
+            font-weight: 600;
+        }
+
+        .award-badge {
+            background: transparent;
+            border: 2px solid #7d6b58;
+            color: #3c362e;
+            padding: 0.3rem 1.5rem;
+            font-weight: 600;
+            display: inline-block;
+            margin: 0.5rem 0.5rem 0 0;
+            font-size: 0.9rem;
+        }
+
+        .footer-note {
+            margin-top: 5rem;
+            padding-top: 2.5rem;
+            border-top: 2px solid #b9aa9a;
+            text-align: center;
+            color: #5e5348;
+            font-size: 0.95rem;
+        }
+
+        .footer-note a {
+            color: #5e6b6b;
+            text-decoration: none;
+            border-bottom: 1px solid #ac9f92;
+        }
+        .image-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin: 2rem 0 1rem;
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    cursor: pointer;
+    backdrop-filter: blur(5px);
+}
+
+.lightbox.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-content {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+    border: 3px solid rgba(255, 255, 255, 0.15);
+    border-radius: 4px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+    animation: lightboxFadeIn 0.3s ease;
+}
+
+@keyframes lightboxFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 25px;
+    right: 35px;
+    color: white;
+    font-size: 50px;
+    font-weight: 300;
+    cursor: pointer;
+    z-index: 10000;
+    transition: color 0.3s ease, transform 0.2s ease;
+    line-height: 1;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.lightbox-close:hover {
+    color: #be976a;
+    transform: rotate(90deg);
+}
+
+.lightbox-caption {
+    position: absolute;
+    bottom: 25px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 15px 20px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    letter-spacing: 0.3px;
+}
+
+/* KURSOR ZA SLIKE KOJE SE MOGU KLIKNUTI */
+.image-item img {
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-item img:hover {
+    transform: scale(1.02);
+    opacity: 0.9;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+#center {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+#center img {
+    height: 420px;
+    object-fit: contain;
+    background: #f0eae3;
+}
+
+.image-item {
+    position: relative;
+    overflow: hidden;
+    background: #f0eae3;
+    border: 1px solid #d6cdc2;
+    transition: all 0.3s ease;
+}
+
+.image-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px -12px rgba(0,0,0,0.25);
+    border-color: #8b6c4d;
+}
+
+#premijeraFilma{
+    grid-column: 1 / -1;
+}
+
+#premijeraFilma img{
+    height: 420px;
+    object-fit: contain;
+    background: #f0eae3;
+}
+
+#ljilja {
+        grid-column: 1 / -1;
+}
+
+#ljilja img {
+    height: 420px;
+    object-fit: contain;
+    background: #f0eae3;
+}
+
+#uspravna{
+    object-fit: contain;
+    height: 650px;
+    background: #f0eae3;
+}
+
+.image-item img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.image-item:hover img {
+    transform: scale(1.03);
+}
+
+.image-caption {
+    padding: 0.8rem 1rem;
+    background: #ffffff;
+    border-top: 1px solid #d6cdc2;
+    font-size: 0.9rem;
+    color: #4a4139;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+}
+.image-scroll {
+    display: flex;
+    gap: 1.2rem;
+    overflow-x: auto;
+    padding: 1rem 0 1.5rem;
+    margin: 1.5rem 0;
+    scrollbar-width: thin;
+    scrollbar-color: #8b6c4d #e2dad1;
+}
+
+.image-scroll::-webkit-scrollbar {
+    height: 6px;
+}
+
+.image-scroll::-webkit-scrollbar-track {
+    background: #e2dad1;
+}
+
+.image-scroll::-webkit-scrollbar-thumb {
+    background: #8b6c4d;
+}
+
+.image-scroll .image-item {
+    min-width: 280px;
+    flex-shrink: 0;
+}
+
+.review-box {
+    position: relative;
+}
+
+.review-text.review-full {
+    display: none;
+    margin-top: 1rem;
+}
+
+.review-text.review-short {
+    display: block;
+}
+
+.review-text.review-full.show {
+    display: block;
+}
+
+.review-text.review-short.hide {
+    display: none;
+}
+
+.review-dots {
+    display: inline;
+}
+
+.read-more-btn {
+    background: transparent;
+    border: 2px solid #7f6246;
+    color: #4e3f30;
+    padding: 0.5rem 1.8rem;
+    margin-top: 1.2rem;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.read-more-btn:hover {
+    background: #7f6246;
+    color: white;
+    border-color: #7f6246;
+}
+
+        /* responziv */
+        @media (max-width: 700px) {
+            .container { padding: 1.5rem; }
+            .site-header h1 { font-size: 3rem; }
+            .year-heading h2 { font-size: 2rem; }
+        }
+
+        @media (max-width: 500px) {
+    .image-grid {
+        grid-template-columns: 1fr;
+    }
+}
