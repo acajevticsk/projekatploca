@@ -68,10 +68,14 @@
     color: #2f3e46;
 }
 
+#projekat {
+    color: white;
+}
+
 .site-logo{
-    width: 700px;
-    margin-top: 0.8rem;
-    opacity: 0.95;
+    width: 100%;
+    max-width: 700px;
+    height: auto;
 }
 
 .site-logo:hover{
@@ -622,5 +626,163 @@
         @media (max-width: 500px) {
     .image-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+/* MOBILNI UREĐAJI */
+@media (max-width: 768px) {
+
+    body {
+        background-attachment: scroll;
+    }
+
+    .container {
+        padding: 1rem;
+    }
+
+    .site-header h1 {
+        font-size: 2.2rem;
+        line-height: 1.1;
+    }
+
+    .site-logo {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .subtitle {
+        font-size: 0.95rem;
+        padding: 0.4rem 1rem;
+    }
+
+    .nav-container {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        padding: 0.8rem;
+    }
+
+    .nav-link {
+        font-size: 1rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .intro-card {
+        padding: 1.5rem;
+    }
+
+    .intro-card h2 {
+        font-size: 1.6rem;
+    }
+
+    .intro-card p {
+        font-size: 1rem;
+    }
+
+    .year-heading {
+        padding: 1rem;
+    }
+
+    .year-heading h2 {
+        font-size: 1.6rem;
+    }
+
+    .year-heading h2 span {
+        font-size: 1.1rem;
+    }
+
+    .projects-list {
+        padding: 1rem;
+    }
+
+    .project-item h3 {
+        font-size: 1.4rem;
+        flex-wrap: wrap;
+    }
+
+    .project-desc {
+        font-size: 1rem;
+    }
+
+    .review-box,
+    .mini-event,
+    .inspire-quote {
+        padding: 1rem;
+    }
+
+    .review-author {
+        font-size: 1.3rem;
+    }
+
+    .image-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    #center {
+        grid-template-columns: 1fr;
+    }
+
+    .image-item img,
+    #center img,
+    #ljilja img,
+    #premijeraFilma img {
+        height: auto;
+        max-height: 350px;
+        object-fit: contain;
+    }
+
+    #uspravna {
+        height: auto;
+        max-height: 450px;
+    }
+
+    .image-scroll .image-item {
+        min-width: 220px;
+    }
+
+    #scrollTopBtn {
+        width: 45px;
+        height: 45px;
+        bottom: 15px;
+        right: 15px;
+        font-size: 18px;
+    }
+
+    .lightbox-close {
+        top: 15px;
+        right: 20px;
+        font-size: 40px;
+    }
+}
+
+/* VEOMA MALI TELEFONI */
+@media (max-width: 480px) {
+
+    .site-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .site-logo {
+        max-width: 280px;
+    }
+
+    .year-heading h2 {
+        font-size: 1.3rem;
+    }
+
+    .project-item h3 {
+        font-size: 1.2rem;
+    }
+
+    .nav-link {
+        font-size: 0.9rem;
+    }
+
+    .review-author {
+        font-size: 1.1rem;
+    }
+
+    .intro-card h2 {
+        font-size: 1.3rem;
     }
 }
